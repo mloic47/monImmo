@@ -19,5 +19,15 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path
+    path('login/', monImmo.views.login, name='login'),
+    path('register/', monImmo.views.register, name='register'),
+    path('logout/', monImmo.views.logout, name='logout'),
+    path('home/', monImmo.views.home, name='home'),
+    path('property/add/', monImmo.views.add_property, name='add_property'),
+    path('property/edit/<int:id>/', monImmo.views.edit_property, name='edit_property'),
+    path('property/delete/<int:id>/', monImmo.views.delete_property, name='delete_property'),
+    path('property/<int:id>/', monImmo.views.property, name='property'),
+    path('property/', monImmo.views.properties, name='properties'),
+    path('search/', monImmo.views.search, name='search'),
+    # path('contact/', monImmo.views.contact, name='contact'),
 ]
