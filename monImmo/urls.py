@@ -15,19 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from appMonImmo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', monImmo.views.login, name='login'),
-    path('register/', monImmo.views.register, name='register'),
-    path('logout/', monImmo.views.logout, name='logout'),
-    path('home/', monImmo.views.home, name='home'),
-    path('property/add/', monImmo.views.add_property, name='add_property'),
-    path('property/edit/<int:id>/', monImmo.views.edit_property, name='edit_property'),
-    path('property/delete/<int:id>/', monImmo.views.delete_property, name='delete_property'),
-    path('property/<int:id>/', monImmo.views.property, name='property'),
-    path('property/', monImmo.views.properties, name='properties'),
-    path('search/', monImmo.views.search, name='search'),
+    # path('login/', include('monImmo.urls')),
+    # path('register/', include('monImmo.urls')),
+    # path('logout/', include('monImmo.urls')),
+    # path('home/', include('monImmo.urls')),
+    # path('property/add/', include('monImmo.urls')),
+    # path('property/edit/<int:id>/', include('monImmo.urls')),
+    # path('property/delete/<int:id>/', include('monImmo.urls')),
+    # path('property/<int:id>/', include('monImmo.urls')),
+    # path('property/', include('monImmo.urls')),
+    # path('search/', include('monImmo.urls')),
     # path('contact/', monImmo.views.contact, name='contact'),
 ]
