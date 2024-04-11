@@ -1,3 +1,4 @@
 monImmo/__pycache__
 appMonImmo/__pycache__
 db.sqlite3
+appMonImmo/migrations

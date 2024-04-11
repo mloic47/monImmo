@@ -14,8 +14,8 @@ class Property(models.Model):
     status = models.CharField(max_length=10, choices=PROPERTY_STATUS_CHOICES, default='available')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    updated_by = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    created_by = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='%(class)s_created_by')
+    updated_by = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='%(class)s_updated_by')
 
     class Meta:
         abstract = True
